@@ -17,6 +17,7 @@
                             </strong>{{ $employee->created_at->locale('fr')->diffForHumans() }} </div>
                         <p class="text mb-auto"><strong>Nom : </strong> {{ $employee->name }}</p>
                         <p class="text mb-auto"><strong>Numéro de téléphone : </strong> {{ $employee->phone }}</p>
+                        <p class="text mb-auto"><strong>Email : </strong> {{ $employee->email }}</p>
                         <p class="text mb-auto"><strong>Adresse : </strong> {{ $employee->address }}</p>
                         <p class="text mb-auto"><strong>Date de naissance : </strong> {{ $employee->birth_date }}</p>
                         <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}"
