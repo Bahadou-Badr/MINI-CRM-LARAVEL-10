@@ -24,6 +24,7 @@ class SearchController extends Controller
     {
         $request->validate([
             'search' => 'required|string|max:255',
+            'search_type' => 'required|string|max:20',
         ]);
         // Get the search value and the search_type(Entreprises/Comanies) from the request
         $search_query = $request->input('search');

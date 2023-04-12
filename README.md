@@ -197,3 +197,48 @@ Confirmation du profil d’un employé
         $this->actionLogService->CreateActionLog("user_confirmed", null, $user); // 👈
 
 ```
+
+
+
+- Une méthode de recherche très simple sans avoir besoin d'installer des packages supplémentaires.
+
+on'a cree un service **SearchService()** qui contien la methode **search()** qui nous permet de chercher une société ou un employé.
+
+SearchController.php
+
+```php
+    public function search(Request $request)
+    {
+        $request->validate([
+            'search' => 'required|string|max:255',
+            'search_type' => 'required|string|max:255',
+        ]);
+        // Get the search value and the search_type(Entreprises/Comanies) from the request
+        $search_query = $request->input('search');
+        $search_type = $request->input('search_type'); 
+        
+        // Search in the name column from the Comapnies Or users table
+        $results = $this->searchService->search($search_type, $search_query); // 👈 SearchService
+
+        // Return the search view with resluts
+        return view('search.index', ['results' => $results]);
+    }
+```
+
+la methode search() de SearchServices.php
+
+```php
+    public function search(string $search_type, string $query){
+        switch ($search_type) {
+            case "Enreprise":
+                $results = Company::select(['company_name as name', 'address'])->where('company_name', 'LIKE', "%{$query}%");
+                break;
+            case "Employe":
+                $results = User::where('name', 'LIKE', "%{$query}%");
+                break;
+            default:
+                $results = User::where('name', 'LIKE', "%{$query}%");
+        }
+        return $results->get();
+    }
+```
