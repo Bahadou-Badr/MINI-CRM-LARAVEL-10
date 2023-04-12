@@ -74,7 +74,7 @@ DB_PASSWORD=
 
 ![mailtrap step one](pictwo.jpeg)
 
-Remplace le code genere par le code qui existe déja dans le fichie .env (Voila un example de code genere)
+Remplace le code qui existe déja dans le fichier.env par le code genere (Voila un example de code genere)
 ```code 
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
