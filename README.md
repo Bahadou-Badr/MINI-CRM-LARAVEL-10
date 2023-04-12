@@ -1,16 +1,8 @@
-# About Laravel
-
-<!-- Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-on a utilisé Laravel pour creer un MINI-CRM qui relie une entreprise à ses employés, et installer auth UI bootstrap pour creer un design simple et propre.
-
-Nous avons employé Laravel pour élaborer un MINI-CRM et intégré Auth UI Bootstrap pour concevoir une interface simple et épurée.
-
-Nous avons utilisé Laravel pour élaborer un MINI-CRM et intégré Auth UI Bootstrap pour concevoir un design simple et propre. -->
+# Documentation Technique
 
 Nous avons utilisé Laravel pour créer un MINI-CRM qui relie une entreprise à ses employés, Et installé Laravel UI Bootstrap pour concevoir un design simple et propre.
 
-prérequis : PHP >= 8.1 | node v16.14.0 
+prérequis : PHP >= 8.1 | node >= 16.14.0 
 
 ## Sommaire
 
@@ -19,13 +11,6 @@ prérequis : PHP >= 8.1 | node v16.14.0
 - Configuration SMTP (utilisation de [Mailtrap](https://mailtrap.io/) - dev environment) .
 - Testing .
 - Notes .
-<!-- - [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting). -->
 
 
 ## Configuration du projet
@@ -44,17 +29,13 @@ prérequis : PHP >= 8.1 | node v16.14.0
 ```console
 # npm install
 ```
-<!-- Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch. -->
-<!-- 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library. -->
 
 ## Configuration de la base de données.
 - run mysql
 - .env file
 
-Créez une nouvelle base de données``crm_db`` dans phpmyadmin et entrez les détails de la base de données dans le fichier .env comme indiqué ci-dessous.
+Créez une nouvelle base de données``crm_db``(choisi un nom quelconque ) dans phpmyadmin et entrez les détails de la base de données dans le fichier .env comme indiqué ci-dessous.
 ```code 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -62,11 +43,6 @@ DB_PORT=3306
 DB_DATABASE=crm_db
 DB_USERNAME=root
 DB_PASSWORD=
-```
-- Generate an app encryption key.
-
-```console
-# php artisan key:generate
 ```
 
 - Migrate the database.
@@ -79,14 +55,26 @@ DB_PASSWORD=
 # php artisan db:seed
 ```
 
+- Generate an app encryption key.
+
+```console
+# php artisan key:generate
+```
+
 ## Configuration SMTP (utilisation de Mailtrap - dev environment) 
-- accéder à [mailtrap](https://mailtrap.io/) et inscrivez-vous.
+- Accéder à [mailtrap](https://mailtrap.io/) et inscrivez-vous.
 
-- vous pouvez choisir le plan gratuit pour tester la partie mail dans l'application.
+- Vous pouvez choisir le plan gratuit pour tester la partie mail dans l'application.
 
+![mailtrap step one](picone.jpeg)
 
-- choisir laravel 7 +
-- mettre le code donnee dans le fichier .env
+- Choisi laravel 7+ (Fleche **1** dans la capture ci-dessous)
+
+- Mettre le code donné (Fleche **2** dans la capture ci-dessous) dans le fichier .env
+
+![mailtrap step one](pictwo.jpeg)
+
+Remplace le code genere par le code qui existe déja dans le fichie .env (Voila un example de code genere)
 ```code 
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
@@ -96,26 +84,7 @@ MAIL_PASSWORD=d7f83ce409d2a7
 MAIL_ENCRYPTION=tls
 ```
 
-<!-- 
-### - Run Seeders: Users(Admin/Employe) & Companies 🎯
-### - Run Seeders: Users(Admin/Employe) & Companies 🎯
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-<!-- - **[DevSquad](https://devsquad.com)** 
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)** -->
 
 ## Testing
 #### Pour finaliser tout cela, exécutez les commandes suivantes sur votre terminal :
@@ -127,18 +96,104 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 ```console
 # php artisan server
 ```
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+#### Voila quelque démonstartion
+- Gestion d'entreprise
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![entreprise](gone.gif)
 
-## Security Vulnerabilities
+- Gestion d'employes / inviter un employe a l'entreprise qu'on a creer dans la demo precedent
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![employe](gtwo.gif)
 
-## License
+- Espace employe
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![espace employe](gtree.gif)
 
+- La rechreche
 
+![espace employe](gfoo.gif)
+
+Vous pouvez tester toutes les fonctionnalités declare dans le cahier de charge
+
+## Notes
+
+- Le Model User represente l'employé et l'admin, on diferencie entre les deux par le column is_admin (boolean)
+
+- on a créez un middleware (IsAdmin) pour vérifier les utilisateurs qui peut accéder à l'Espace administrateur  ou qui peut accéder à l'Espace employé.
+
+- Concernant le Module Historique et pour suivre les action suivants : Envoi d'invitationtions // Annulation d’invitation // Validation d’invitation // Confirmation du profil d’un employé .
+j'ai creer un service (ActionLogService) qui contien la methode CreateActionLog( ) qui nous permet d'enregister la tracabilite des actions , et pour minimiser le code de controleur.
+
+ ```php
+CreateActionLog(string $action_type, Invitation $invitation = NULL, User $user = NULL) {
+
+}
+```
+
+Envoi d'invitation
+```php
+        // Send the invitation email with a link to the registration page
+        $registrationLink = url('/verify/invitation?token=' . $token);
+        Mail::to($invitation->email)->send(new InvitationMail($registrationLink));
+
+        // Create a new Action Log record for the invitation sent
+        $this->actionLogService->CreateActionLog("invitation_sent", $invitation); // 👈
+```
+
+Annulation d’invitation
+
+```php
+        $invitation = Invitation::find($id);
+        //change the status of the invitation , status should be equal 2 : annulée
+        
+        $invitation->status = 2;  // 0 = en attente | 1 = validée | 2 = annulée || Default value equal 0
+        $invitation->save();
+
+        // Create a new Action Log record for the invitation cancel
+        $this->actionLogService->CreateActionLog("invitation_cancel", $invitation);  // 👈
+```
+
+Validation d’invitation
+
+```php
+
+        // Get token from the URL
+        $token = $request->query('token');
+
+        // Find the invitation with the matching token and the status != 2 (annulée)
+        $invitation = Invitation::where('token', $token)->where('status', '<>', 2)->first();
+
+        // If the token is not valid, show the error message
+        if (!$invitation) {
+            abort(404, 'Token invalide');
+        }
+
+        //change the status of the invitation , status should be equal 1 : validée
+        $invitation->status = 1;
+        $invitation->save();
+        // Create a new Action Log record for the invitation valid
+        $this->actionLogService->CreateActionLog("invitation_valid", $invitation); // 👈
+
+```
+
+Confirmation du profil d’un employé
+
+```php
+        // inputs validation
+         ...
+        //create the Employee (compléter son profil )
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'birth_date' => $request->birth_date,
+            'is_admin' => false,
+            'company_id' => $request->company_id,
+        ]);
+        // Create a new Action Log record for the register confirmation
+        $this->actionLogService->CreateActionLog("user_confirmed", null, $user); // 👈
+
+```

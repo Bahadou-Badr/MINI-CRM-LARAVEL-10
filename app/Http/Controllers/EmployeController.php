@@ -62,7 +62,7 @@ class EmployeController extends Controller
             'birth_date' => 'required|date',
         ]);
 
-        //create the Employee
+        //create the Employee (compléter son profil )
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

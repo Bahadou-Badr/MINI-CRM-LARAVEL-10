@@ -65,11 +65,13 @@ class InvitationController extends Controller
             'token' => $token,
             'admin_id' => $request->user()->id,
         ]);
-        // Create a new Action Log record for the invitation sent
-        $this->actionLogService->CreateActionLog("invitation_sent", $invitation);
+
         // Send the invitation email with a link to the registration page
         $registrationLink = url('/verify/invitation?token=' . $token);
         Mail::to($invitation->email)->send(new InvitationMail($registrationLink));
+
+        // Create a new Action Log record for the invitation sent
+        $this->actionLogService->CreateActionLog("invitation_sent", $invitation);
 
         return redirect()->route('invitations.index')->with('status', "L'invitation a été envoyée avec succès");
     }
