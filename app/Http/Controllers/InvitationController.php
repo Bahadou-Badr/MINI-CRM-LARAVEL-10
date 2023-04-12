@@ -23,6 +23,10 @@ class InvitationController extends Controller
      */
     public function __construct(ActionLogService $actionLogService)
     {
+        $this->middleware('auth')->except('verifyInvitation');
+        $this->middleware('is_admin')->except('verifyInvitation');
+        $this->middleware('guest')->only('verifyInvitation');
+
         $this->actionLogService = $actionLogService;
     }
     /**

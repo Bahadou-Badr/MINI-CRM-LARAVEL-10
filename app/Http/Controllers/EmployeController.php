@@ -18,6 +18,10 @@ class EmployeController extends Controller
      */
     public function __construct(ActionLogService $actionLogService)
     {
+        $this->middleware('auth')->except('registerEmployee');
+        $this->middleware('is_admin')->only('index');
+        $this->middleware('guest')->only('registerEmployee');
+
         $this->actionLogService = $actionLogService;
     }
 
@@ -86,7 +90,7 @@ class EmployeController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::find($id);
+        $user = User::find(auth()->user()->id);
         return view('employees.profil', ['employee' => $user]);
     }
 

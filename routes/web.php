@@ -22,10 +22,6 @@ Route::resources([
     'history' => App\Http\Controllers\History\ActionController::class,
     'invitations' => App\Http\Controllers\InvitationController::class,
 ]);
-// Route::resource('companies', App\Http\Controllers\CompanyController::class);
-// Route::resource('employees', App\Http\Controllers\EmployeController::class);
-// Route::resource('history', App\Http\Controllers\History\ActionController::class);
-// Route::resource('invitations', App\Http\Controllers\InvitationController::class);
 
 Auth::routes();
 
@@ -36,4 +32,3 @@ Route::get('/verify/invitation', [App\Http\Controllers\InvitationController::cla
 Route::put('/cancel/invitation/{invitation}', [App\Http\Controllers\InvitationController::class, 'cancelInvitation'])->name('cancel.invitation');
 
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
-// Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('home');
