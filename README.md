@@ -94,7 +94,7 @@ MAIL_ENCRYPTION=tls
 ```
 
 ```console
-# php artisan server
+# php artisan serve
 ```
 
 #### Voila quelque démonstartion
